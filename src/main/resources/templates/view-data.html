@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Insurance Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-4">
+        <h1>Insurance Data Dashboard</h1>
+        
+        <table class="table table-striped table-hover">
+            <thead class="table-dark">
+                <tr>
+					<th>Claim Number</th>
+					<th>Policy Number</th>
+					<th>Process Center</th>
+					<th>Company Code</th>
+                    <th>Insured Name</th>
+					<th>Group Line</th>
+					<th>Line Code</th>
+					<th>Coverage Code</th>
+					<th>Transaction Code</th>
+					<th>Loss Date</th>
+					<th>Loss Amount</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="data : ${insuranceDataList}">
+					<td th:text="${data.getClaimOcc()}"></td>
+                    <td th:text="${data.getPolicyNumber()}"></td>
+					<td th:text="${data.getProcessCenter()}"></td>
+					<td th:text="${data.getCompanyName()}"></td>
+                    <td th:text="${data.getName()}"></td>
+					<td th:text="${data.getGroupLine()}"></td>
+					<td th:text="${data.getSuserLine()}"></td>
+					<td th:text="${data.getCoverageCode()}"></td>
+					<td th:text="${data.getTransCode()}"></td>
+					<td th:text="${data.getLossDate()}"></td>
+					<td th:text="${data.getLossAmount()}"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

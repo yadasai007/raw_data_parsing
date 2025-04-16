@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Multi-line Insurance Data Upload</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        textarea {
+            width: 100%;
+            height: 300px;
+            margin-bottom: 10px;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Upload Multiple Insurance Data Entries</h1>
+    <p>Enter multiple insurance data entries, one per line:</p>
+    
+    <form id="multiUploadForm">
+        <textarea name="multiData" placeholder="Enter data here, one entry per line..."></textarea>
+        <button type="submit">Process All</button>
+    </form>
+    
+    <p><a href="/upload">Switch to single entry form</a></p>
+    
+    <div id="result"></div>
+
+    <script>
+        document.getElementById('multiUploadForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const textarea = document.querySelector('textarea[name="multiData"]');
+            const data = textarea.value;
+            
+            fetch('/upload-multi', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'text/plain'
+                },
+                body: data
+            })
+            .then(response => response.text())
+            .then(result => {
+                document.getElementById('result').innerHTML = '<p>Success: ' + result + '</p>';
+            })
+            .catch(error => {
+                document.getElementById('result').innerHTML = '<p>Error: ' + error + '</p>';
+            });
+        });
+    </script>
+</body>
+</html>

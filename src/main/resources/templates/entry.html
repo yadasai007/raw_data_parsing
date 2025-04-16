@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Insurance Data Upload</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        #message {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 4px;
+            display: none;
+        }
+        .success { background-color: #d4edda; color: #155724; }
+        input { padding: 8px; width: 300px; }
+        button { padding: 8px 16px; background-color: #4CAF50; color: white; border: none; }
+    </style>
+</head>
+<body>
+    <h1>Upload Insurance Data</h1>
+    
+    <form action="/upload" method="post">
+        <input type="text" name="data" placeholder="Enter insurance data..." required>
+        <button type="submit">Process</button>
+    </form>
+    
+    <div id="message"></div>
+    
+    <script>
+        // Display the message from POST response if it exists
+        const urlParams = new URLSearchParams(window.location.search);
+        const message = urlParams.get('message');
+        if (message) {
+            const msgDiv = document.getElementById('message');
+            msgDiv.textContent = message;
+            msgDiv.className = 'success';
+            msgDiv.style.display = 'block';
+        }
+    </script>
+</body>
+</html>
