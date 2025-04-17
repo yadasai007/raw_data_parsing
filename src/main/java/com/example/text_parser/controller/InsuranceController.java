@@ -5,8 +5,13 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+
+import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import com.example.text_parser.model.InsuranceData;
 import com.example.text_parser.repository.InsuranceRepository;
@@ -51,10 +56,17 @@ public class InsuranceController {
     @Operation(summary = "Process Single Line Data", description = "Add Single line data to database")
     @PostMapping("/upload")
     public ResponseEntity<String> uploadData(@RequestBody String dataString) {
-        insuranceService.processInsuranceData(dataString);
-    	logger.info("New data added to database successfully");
+    	System.out.println(dataString);
+        if(insuranceService.processInsuranceData(dataString)==false)
+        {
+        	logger.error("Unable to Insert Data Error occured");     
+        	return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+        		       .body("Failed to insert data into database");
+        }
+        logger.info("New data added to database successfully");     
         return ResponseEntity.ok("Single Entry Inserted Into Database");
-    }
+
+       }
     
     @Operation(summary = "Process multi-line data", description = "Processes multiple lines of insurance data")
     @PostMapping("/upload-multi")
@@ -64,9 +76,14 @@ public class InsuranceController {
         for (String line : lines) {
             if (!line.trim().isEmpty()) {
             	logger.info("New line added");
-                insuranceService.processInsuranceData(line);
-                count+=1;
+                if(insuranceService.processInsuranceData(line))
+                	count+=1;
             }
+        }
+        if(count==0)
+        {
+        	return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+        		       .body("Failed to insert data into database");
         }
         return ResponseEntity.ok("Processed " + count + " lines");
     }
@@ -75,10 +92,14 @@ public class InsuranceController {
     @ApiResponse(responseCode = "200", description = "Form displayed successfully")
     @GetMapping("/dashboard")
     public String viewNames(Model model) {
+
     	List<InsuranceData> insuranceData = insuranceDataRepository.findAll();
+    	List<InsuranceData> sortedList = insuranceData.stream()
+    		    .sorted(Comparator.comparing(InsuranceData::getClaimOcc))
+    		    .collect(Collectors.toList());
         
         // Add the complete list to the model
-        model.addAttribute("insuranceDataList", insuranceData);
+        model.addAttribute("insuranceDataList", sortedList);
         return "view-data"; // name of your Thymeleaf template
     }
     

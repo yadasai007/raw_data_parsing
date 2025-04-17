@@ -1,41 +1,92 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Insurance Data Upload</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 20px; }
-        #message {
-            padding: 10px;
-            margin: 10px 0;
-            border-radius: 4px;
-            display: none;
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
         }
-        .success { background-color: #d4edda; color: #155724; }
-        input { padding: 8px; width: 300px; }
-        button { padding: 8px 16px; background-color: #4CAF50; color: white; border: none; }
+        .input-container {
+            margin-bottom: 20px;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .switch-link {
+            display: block;
+            margin-top: 20px;
+        }
+        #result {
+            margin-top: 20px;
+            padding: 10px;
+            border-radius: 4px;
+        }
+        .success {
+            background-color: #d4edda;
+            color: #155724;
+        }
+        .error {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
     </style>
 </head>
 <body>
     <h1>Upload Insurance Data</h1>
+    <p>Enter a single insurance data entry:</p>
     
-    <form action="/upload" method="post">
-        <input type="text" name="data" placeholder="Enter insurance data..." required>
+    <form id="singleUploadForm">
+        <div class="input-container">
+            <input type="text" name="singleData" placeholder="Enter insurance data here..." required>
+        </div>
         <button type="submit">Process</button>
     </form>
     
-    <div id="message"></div>
+    <a href="/upload-multi" class="switch-link">Switch to multiple entries form</a>
     
+    <div id="result"></div>
+
     <script>
-        // Display the message from POST response if it exists
-        const urlParams = new URLSearchParams(window.location.search);
-        const message = urlParams.get('message');
-        if (message) {
-            const msgDiv = document.getElementById('message');
-            msgDiv.textContent = message;
-            msgDiv.className = 'success';
-            msgDiv.style.display = 'block';
-        }
+        document.getElementById('singleUploadForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const input = document.querySelector('input[name="singleData"]');
+            const data = input.value;
+            
+            fetch('/upload', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'text/plain'
+                },
+                body: data
+            })
+            .then(response => response.text())
+            .then(result => {
+                const resultDiv = document.getElementById('result');
+                resultDiv.innerHTML = '<p>Success: ' + result + '</p>';
+                resultDiv.className = 'success';
+            })
+            .catch(error => {
+                const resultDiv = document.getElementById('result');
+                resultDiv.innerHTML = '<p>Error: ' + error.message + '</p>';
+                resultDiv.className = 'error';
+            });
+        });
     </script>
 </body>
 </html>

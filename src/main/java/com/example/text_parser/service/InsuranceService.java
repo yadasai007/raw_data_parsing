@@ -2,6 +2,8 @@ package com.example.text_parser.service;
 
 import org.springframework.stereotype.Service;
 
+import java.net.URLDecoder;
+import java.nio.charset.StandardCharsets;
 import java.util.Date;
 import java.util.LinkedHashMap;
 import com.example.text_parser.model.InsuranceData;
@@ -20,8 +22,9 @@ public class InsuranceService {
     }
 
 
-    public void processInsuranceData(String dataString) {
+    public boolean processInsuranceData(String dataString) {
         try {
+        	dataString=URLDecoder.decode(dataString, StandardCharsets.UTF_8);
             LinkedHashMap<String, Object> dataMap = parserService.search2(dataString);
             InsuranceData obj = new InsuranceData();
 
@@ -188,10 +191,12 @@ public class InsuranceService {
             obj.setReinPct(parseDouble(dataMap.get("Rein Pct")));
 
             insuranceRepository.save(obj);
-
+            return true;
         } catch (Exception e) {
         	logger.error("Error Occured : "+e);
-            e.printStackTrace();
+        	logger.info(dataString);
+//            e.printStackTrace();
+            return false;
         }
     }
 

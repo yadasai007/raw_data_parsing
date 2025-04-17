@@ -71,8 +71,8 @@ public class ParserService
                 put("Pol Level Exp", 10);
                 put("Inforce Prem", 11);
                 put("Written Prem", 11);
-                put("Limit Amt Person", 8);
-                put("Ded Type", 1);
+                put("Limit Amt Person", 7);
+                put("Ded Type", 2);
                 put("Ded Amt", 7);
                 put("Csp Subline", 3);
                 put("Csp Pol Type", 2);
@@ -135,22 +135,22 @@ public class ParserService
                 put("Adjuster Number", 3);
                 put("Draft Date", 8);
                 put("Draft Number", 10);
-                put("Draft Irs", 10);
-                put("Loss Amount", 12);
+                put("Draft Irs", 11);
+                put("Loss Amount", 11);
                 put("Orig Pay Year", 2);
                 put("Type Claim", 1);
                 put("Occur New", 1);
                 put("Occur Status", 1);
                 put("Cov New", 1);
                 put("Cov Status", 1);
-                put("Clmt New", 3);
+                put("Clmt New", 2);
                 put("Clmt Status", 1);
                 put("Suit Ind", 1);
-                put("Transaction Type", 2);
+                put("Transaction Type", 3);
                 put("Reserve Taken Down", 11);
                 put("Net Change", 10);
                 put("Indpndt Adj", 3);
-                put("Reinspection Date", 7);
+                put("Reinspection Date", 8);
                 put("Name Type", 2);
                 put("Conv Claim Ind", 1);
                 put("Adj Case Count", 1);
@@ -164,7 +164,7 @@ public class ParserService
                 put("Experience Rated", 1);
                 put("Experience Liab", 3);
                 put("Experience Pd", 3);
-                put("Excess Limit Sw", 3);
+                put("Excess Limit Sw", 2);
                 put("Excess Limit", 9);
                 put("Sort Company", 2);
                 put("Sort Claim Occ", 10);
@@ -175,7 +175,7 @@ public class ParserService
                 put("Sort Claimant Number", 3);
                 put("Sort Dac Ind", 1);
                 put("Sort Rein Company", 4);
-                put("Sort Actg Date", 7);
+                put("Sort Actg Date", 8);
                 put("Sort Trans Code", 2);
             }
         };
@@ -210,53 +210,60 @@ public class ParserService
         LinkedHashMap<String, Object> parsed = new LinkedHashMap<>(fieldDefinitions.size());
         int startIndex = 0;
         int textLength = searchText.length();
+        try
+        {
+            for (Map.Entry<String, Integer> entry : fieldDefinitions.entrySet()) {
+                String fieldName = entry.getKey();
+                int endIndex = startIndex + entry.getValue();
 
-        for (Map.Entry<String, Integer> entry : fieldDefinitions.entrySet()) {
-            String fieldName = entry.getKey();
-            int endIndex = startIndex + entry.getValue();
-
-            if (endIndex > textLength) {
-                endIndex = textLength;
-                if (startIndex >= endIndex)
-                    break;
-            }
-
-            String stringValue = searchText.substring(startIndex, endIndex);
-            Object value;
-            if (contain(stringColumns, fieldName)) {
-                value = stringValue;
-            } else if (contain(dateColumns, fieldName)) {
-                // Parse as date (you might want to add proper date parsing logic)
-            	stringValue = stringValue.replaceAll("[^0-9.-]", "");
-                SimpleDateFormat formatter = new SimpleDateFormat("MMddyyyy");
-                Date date=null;
-                if(stringValue.equals("00000000"))
-                {
-                	stringValue="";
-                }
-                else
-                {
-                    try {
-                        date = formatter.parse(stringValue);
-                   } catch (ParseException e) {
-                       System.out.println("Invalid date format: " + e.getMessage());
-                   }                	
+                if (endIndex > textLength) {
+                    endIndex = textLength;
+                    if (startIndex >= endIndex)
+                        break;
                 }
 
+                String stringValue = searchText.substring(startIndex, endIndex);
+                Object value;
+                if (contain(stringColumns, fieldName)) {
+                    value = stringValue;
+                } else if (contain(dateColumns, fieldName)) {
+                    // Parse as date (you might want to add proper date parsing logic)
+                	stringValue = stringValue.replaceAll("[^0-9.-]", "");
+                    SimpleDateFormat formatter = new SimpleDateFormat("MMddyyyy");
+                    Date date=null;
+                    if(stringValue.equals("00000000"))
+                    {
+                    	stringValue="";
+                    }
+                    else
+                    {
+                        try {
+                            date = formatter.parse(stringValue);
+                       } catch (ParseException e) {
+                           System.out.println("Invalid date format: " + e.getMessage());
+                       }                	
+                    }
 
-                value = date; // or parse to Date object
-            } else if (contain(doubleColumns, fieldName)) {
-            	stringValue = stringValue.replaceAll("[^0-9.-]", "");
-                value = stringValue.isEmpty() ? 0.0 : Double.parseDouble(stringValue);
-            } else {
-                // Default to string if not found in any category
-                value = stringValue;
+
+                    value = date; // or parse to Date object
+                } else if (contain(doubleColumns, fieldName)) {
+                	stringValue = stringValue.replaceAll("[^0-9.-]", "");
+                    value = stringValue.isEmpty() ? 0.0 : Double.parseDouble(stringValue);
+                } else {
+                    // Default to string if not found in any category
+                    value = stringValue;
+                }
+
+                parsed.put(fieldName, value);
+                startIndex = endIndex;
             }
-
-            parsed.put(fieldName, value);
-            startIndex = endIndex;
+            System.out.println(parsed);
         }
-        System.out.println(parsed);
+        catch(Exception e)
+        {
+        	e.printStackTrace();
+        }
+
         return parsed;
     }
 }
