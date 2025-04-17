@@ -16,6 +16,14 @@ public class ParserService
         }
         return false;
     }
+	private Double generate(String stringValue)
+	{
+		if (!stringValue.isEmpty() && stringValue.charAt(stringValue.length() - 1) == '-') {
+			stringValue=stringValue.substring(0, stringValue.length() - 1);
+			return -1*Double.parseDouble(stringValue);
+		}
+		return Double.parseDouble(stringValue);
+	}
     public LinkedHashMap<String, Object> search2(String searchText) {
     	searchText=URLDecoder.decode(searchText, StandardCharsets.UTF_8);
         final LinkedHashMap<String, Integer> fieldDefinitions = new LinkedHashMap<String,Integer>() {
@@ -248,7 +256,7 @@ public class ParserService
                     value = date; // or parse to Date object
                 } else if (contain(doubleColumns, fieldName)) {
                 	stringValue = stringValue.replaceAll("[^0-9.-]", "");
-                    value = stringValue.isEmpty() ? 0.0 : Double.parseDouble(stringValue);
+                    value = stringValue.isEmpty() ? 0.0 : generate(stringValue);
                 } else {
                     // Default to string if not found in any category
                     value = stringValue;
