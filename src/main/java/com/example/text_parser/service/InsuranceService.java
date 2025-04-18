@@ -16,7 +16,6 @@ public class InsuranceService {
 	private static final Logger logger = LoggerFactory.getLogger(InsuranceService.class);
     private ParserService parserService=new ParserService();
     private InsuranceRepository insuranceRepository;
-
     public InsuranceService(InsuranceRepository insuranceRepository) {
         this.insuranceRepository = insuranceRepository;
     }

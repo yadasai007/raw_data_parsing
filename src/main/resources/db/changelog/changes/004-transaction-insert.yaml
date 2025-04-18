@@ -1,0 +1,149 @@
+databaseChangeLog:
+  - changeSet:
+      id: 2  # Make sure this follows your previous changeset ID
+      author: your_name
+      changes:
+        - insert:
+            tableName: TRANSACTION_DETAILS
+            columns:
+              - column:
+                  name: transaction_type
+                  value: "01"
+              - column:
+                  name: transaction_description
+                  value: "OPEN LOSS"
+        - insert:
+            tableName: TRANSACTION_DETAILS
+            columns:
+              - column:
+                  name: transaction_type
+                  value: "11"
+              - column:
+                  name: transaction_description
+                  value: "REOPEN LOSS"
+        - insert:
+            tableName: TRANSACTION_DETAILS
+            columns:
+              - column:
+                  name: transaction_type
+                  value: "21"
+              - column:
+                  name: transaction_description
+                  value: "CHANGE LOSS"
+        - insert:
+            tableName: TRANSACTION_DETAILS
+            columns:
+              - column:
+                  name: transaction_type
+                  value: "31"
+              - column:
+                  name: transaction_description
+                  value: "CLOSE LOSS"
+        - insert:
+            tableName: TRANSACTION_DETAILS
+            columns:
+              - column:
+                  name: transaction_type
+                  value: "41"
+              - column:
+                  name: transaction_description
+                  value: "PARTIAL PAY LOSS"
+        - insert:
+            tableName: TRANSACTION_DETAILS
+            columns:
+              - column:
+                  name: transaction_type
+                  value: "51"
+              - column:
+                  name: transaction_description
+                  value: "FINAL PAY LOSS"
+        - insert:
+            tableName: TRANSACTION_DETAILS
+            columns:
+              - column:
+                  name: transaction_type
+                  value: "53"
+              - column:
+                  name: transaction_description
+                  value: "FINAL PAY EXPENSE XPRT"
+        - insert:
+            tableName: TRANSACTION_DETAILS
+            columns:
+              - column:
+                  name: transaction_type
+                  value: "54"
+              - column:
+                  name: transaction_description
+                  value: "FINAL PAY EXP CRT RPTR"
+        - insert:
+            tableName: TRANSACTION_DETAILS
+            columns:
+              - column:
+                  name: transaction_type
+                  value: "55"
+              - column:
+                  name: transaction_description
+                  value: "FINAL PAY EXPENSE LEGAL"
+        - insert:
+            tableName: TRANSACTION_DETAILS
+            columns:
+              - column:
+                  name: transaction_type
+                  value: "56"
+              - column:
+                  name: transaction_description
+                  value: "FINAL PAY EXP IND ADJ"
+        - insert:
+            tableName: TRANSACTION_DETAILS
+            columns:
+              - column:
+                  name: transaction_type
+                  value: "61"
+              - column:
+                  name: transaction_description
+                  value: "PAY AFTER CLOSE LOSS"
+        - insert:
+            tableName: TRANSACTION_DETAILS
+            columns:
+              - column:
+                  name: transaction_type
+                  value: "72"
+              - column:
+                  name: transaction_description
+                  value: "PART RECOV SUBROGATION"
+        - insert:
+            tableName: TRANSACTION_DETAILS
+            columns:
+              - column:
+                  name: transaction_type
+                  value: "82"
+              - column:
+                  name: transaction_description
+                  value: "FINAL RECOV SUBROGATION"
+        - insert:
+            tableName: TRANSACTION_DETAILS
+            columns:
+              - column:
+                  name: transaction_type
+                  value: "84"
+              - column:
+                  name: transaction_description
+                  value: "FINAL RECOV REINSURANCE"
+        - insert:
+            tableName: TRANSACTION_DETAILS
+            columns:
+              - column:
+                  name: transaction_type
+                  value: "87"
+              - column:
+                  name: transaction_description
+                  value: "FINAL RECOV UNALLOC EXP"
+        - insert:
+            tableName: TRANSACTION_DETAILS
+            columns:
+              - column:
+                  name: transaction_type
+                  value: "92"
+              - column:
+                  name: transaction_description
+                  value: "RECOV AFTER CLOSE SUBRO"

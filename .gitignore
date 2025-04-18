@@ -33,3 +33,4 @@ build/
 .vscode/
 /bin/
 .metadata/
+/.apt_generated_tests/

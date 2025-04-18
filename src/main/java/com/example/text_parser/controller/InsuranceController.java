@@ -6,15 +6,21 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
+import java.io.IOException;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import com.example.text_parser.model.InsuranceData;
+import com.example.text_parser.model.TransactionDetails;
 import com.example.text_parser.repository.InsuranceRepository;
+import com.example.text_parser.repository.TransactionRepository;
+import com.example.text_parser.service.DataTransferService;
+import com.example.text_parser.service.EntityExportService;
 import com.example.text_parser.service.InsuranceService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
@@ -30,11 +36,23 @@ public class InsuranceController {
 	private static final Logger logger = LoggerFactory.getLogger(InsuranceController.class);
 
     private final InsuranceService insuranceService;
+    private final DataTransferService dataTransferService;
+    private final EntityExportService entityExportService;
     @Autowired
     private InsuranceRepository insuranceDataRepository;
+    
+    @Autowired
+    private TransactionRepository transactionTypeRepository;
 
-    public InsuranceController(InsuranceService insuranceService) {
+    public InsuranceController(InsuranceService insuranceService,DataTransferService dataTransferService,EntityExportService entityExportService) {
         this.insuranceService = insuranceService;
+        this.dataTransferService=dataTransferService;
+        this.entityExportService=entityExportService;
+        try {
+			this.entityExportService.exportEntitiesToFile();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
     }
 
     @Operation(summary = "Show single line form", description = "Returns the HTML form for single line input")
@@ -97,10 +115,23 @@ public class InsuranceController {
     	List<InsuranceData> sortedList = insuranceData.stream()
     		    .sorted(Comparator.comparing(InsuranceData::getClaimOcc))
     		    .collect(Collectors.toList());
-        
+    	List<TransactionDetails> transactionList = transactionTypeRepository.findAll();
+        Map<String, String> transactionMap = transactionList.stream()
+                .collect(Collectors.toMap(
+                    TransactionDetails::getTransactionType, 
+                    TransactionDetails::getTransactionDescription
+                ));
+
         // Add the complete list to the model
         model.addAttribute("insuranceDataList", sortedList);
+        model.addAttribute("transactionMap",transactionMap);
         return "view-data"; // name of your Thymeleaf template
+    }
+    
+    @GetMapping("/transfer/all")
+    public String transferAllToNps() {
+        dataTransferService.transferAllToNps();
+        return "redirect:/dashboard";
     }
     
 }
