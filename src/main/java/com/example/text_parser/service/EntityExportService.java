@@ -6,7 +6,6 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
@@ -18,7 +17,7 @@ import org.springframework.stereotype.Service;
 
 import com.example.text_parser.model.NpsData;
 import com.example.text_parser.repository.NpsRepository;
-
+import com.example.text_parser.utils.ReportSection;
 @Service
 public class EntityExportService
 {
@@ -95,7 +94,7 @@ public class EntityExportService
 	    	    .collect(Collectors.toList());
 	    Set<String> amount1TransactionCodes = Set.of("01", "11");
 	    Set<String> amount2TransactionCodes = Set.of("21");
-	    Set<String> amount3TransactionCodes = Set.of();
+	    Set<String> amount3TransactionCodes = Set.of("31","41","51","61");
 	    Set<String> amount4TransactionCodes = Set.of("53","54","55","56");
 	    Set<String> amount5TransactionCodes = Set.of("72", "82","87","92");
 	    Set<String> amount6TransactionCodes = entities.stream()
@@ -111,28 +110,21 @@ public class EntityExportService
 	    	        .sum()
 	    	    )
 	    	    .collect(Collectors.toList());
-	    directCurrentAmounts.set(2, 860875.79);
 	    List<Long> directCurrentCounts = listOfSets.stream()
 	    	    .map(set -> entities.stream()
 	    	        .filter(entity -> set.contains(entity.getTransactionCode()))
 	    	        .count() // Counts the number of matching entities
 	    	    )
 	    	    .collect(Collectors.toList());
-	    directCurrentCounts.set(2,276L);
 	    directCurrentCounts.set(5, 0L);
 	    Double totalSum = entities.stream()
 	    	    .mapToDouble(NpsData::getLossAmount)  // Extract loss_amount as double
 	    	    .sum();
-	    Long totalCount = entities.stream()
-	    	    .mapToDouble(NpsData::getLossAmount)  // Extract loss_amount as double
-	    	    .count();
-	    System.out.println(directCurrentAmounts.get(5)+" "+totalSum+" "+totalCount);
 	    Double cededAmount=totalSum-directCurrentAmounts.get(5);
 	    Long cededCount = entities.stream()
 	    	    .filter(entity -> "84".equals(entity.getTransactionCode()))
 	    	    .count();
 
-	    Double grandAmount=directCurrentAmounts.get(5)-cededAmount;
 	    cededCurrentAmounts.set(4, cededAmount);
 	    cededCurrentAmounts.set(5, cededAmount);
 	    cededCurrentCounts.set(4, cededCount);
@@ -167,12 +159,13 @@ public class EntityExportService
 	        
 	        // Process each section
 	        for (ReportSection section : sections) {
-	            writeAmountDataHeader(writer, now, dateFormatter, timeFormatter, section.name);
+	        	
+	            writeAmountDataHeader(writer, now, dateFormatter, timeFormatter, section.getName());
 	            
 	            // Write amounts
 	            for (int i = 1; i <= directCurrentAmounts.size(); i++) {
-	                double priorAmount = section.hasData() ? section.priorAmounts[i-1] : 0.0;
-	                double currentAmount = section.hasData() ? section.currentAmounts.get(i-1) : 0.0;
+	                double priorAmount = section.hasData() ? section.getPriorAmounts()[i-1] : 0.0;
+	                double currentAmount = section.hasData() ? section.getCurrentAmounts().get(i-1) : 0.0;
 	                
 	                writer.write(String.format(
 	                    "AMOUNT %-3d %26.2f %28.2f %26.2f%n",
@@ -182,8 +175,8 @@ public class EntityExportService
 	            
 	            // Write counts
 	            for (int i = 1; i <= directCurrentCounts.size(); i++) {
-	                Long priorCount = section.hasData() ? section.priorCounts[i-1] : 0;
-	                Long currentCount = section.hasData() ? section.currentCounts.get(i-1) : 0;
+	                Long priorCount = section.hasData() ? section.getPriorCounts()[i-1] : 0;
+	                Long currentCount = section.hasData() ? section.getCurrentCounts().get(i-1) : 0;
 	                
 	                writer.write(String.format(
 	                    "COUNT %-3d %27d %28d %26d%n",
@@ -263,25 +256,4 @@ public class EntityExportService
 		writer.newLine();
 	}
 	
-}
-class ReportSection {
-    String name;
-    Double[] priorAmounts;
-    Long[] priorCounts;
-    List<Double> currentAmounts;
-    List<Long> currentCounts;
-    
-    public ReportSection(String name, Double[] priorAmounts, Long[] priorCounts, 
-                       List<Double> currentAmounts, List<Long> currentCounts) {
-        this.name = name;
-        this.priorAmounts = priorAmounts;
-        this.priorCounts = priorCounts;
-        this.currentAmounts = currentAmounts;
-        this.currentCounts = currentCounts;
-    }
-    
-    public boolean hasData() {
-        return priorAmounts != null && priorCounts != null && 
-               currentAmounts != null && currentCounts != null;
-    }
 }

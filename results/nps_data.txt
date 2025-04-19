@@ -1,5 +1,5 @@
   R2C12-ACC                             NORFOLK & DEDHAM MUTUAL FIRE INSURANCE COMPANIES             RUN DATE   04-18-25    PAGE    1
-                                        A C C E P T E D   C L A I M S   L I S T                    RUN TIME  8:25PM
+                                        A C C E P T E D   C L A I M S   L I S T                    RUN TIME  9:19PM
 
 CLAIM      POLICY       PROC  CO         INSUREDS       GP LN  COV -------TRANSACTION------------    LOSS           LOSS
 NUMBER     NUMBER       CNTR  CD           NAME         LN CD   CD TYPE      DESCRIPTION             DATE          AMOUNT
@@ -57,7 +57,7 @@ C2432093     923648718A        01 JACOBS, LOIS          06  06  01 31    CLOSE L
 C2440211     922359611A        99 KAZYRID, YEVHEN       06  06  99 31    CLOSE LOSS                07-17-24        0.00
 
   R2C12-ACC                             NORFOLK & DEDHAM MUTUAL FIRE INSURANCE COMPANIES             RUN DATE   04-18-25    PAGE    2
-                                        A C C E P T E D   C L A I M S   L I S T                    RUN TIME  8:25PM
+                                        A C C E P T E D   C L A I M S   L I S T                    RUN TIME  9:19PM
 
 CLAIM      POLICY       PROC  CO         INSUREDS       GP LN  COV -------TRANSACTION------------    LOSS           LOSS
 NUMBER     NUMBER       CNTR  CD           NAME         LN CD   CD TYPE      DESCRIPTION             DATE          AMOUNT
@@ -115,7 +115,7 @@ C2446054     924061511A        01 PELLETIER, CHRISTOPH  06  06  01 61    PAY AFT
 C2446057     924068219A        99 OGBEMUDIA, OSAS       06  06  99 82    FINAL RECOV SUBROGATION   11-08-24        1400.46
 
   R2C12-ACC                             NORFOLK & DEDHAM MUTUAL FIRE INSURANCE COMPANIES             RUN DATE   04-18-25    PAGE    3
-                                        A C C E P T E D   C L A I M S   L I S T                    RUN TIME  8:25PM
+                                        A C C E P T E D   C L A I M S   L I S T                    RUN TIME  9:19PM
 
 CLAIM      POLICY       PROC  CO         INSUREDS       GP LN  COV -------TRANSACTION------------    LOSS           LOSS
 NUMBER     NUMBER       CNTR  CD           NAME         LN CD   CD TYPE      DESCRIPTION             DATE          AMOUNT
@@ -173,7 +173,7 @@ C2548791     923535904A        01 WOJCIK, ROBERT        06  06  01 72    PART RE
 C2548795     923739179A        01 CASPARRIELLO, RICK    06  06  01 61    PAY AFTER CLOSE LOSS      01-01-25        1000.00
 
   R2C12-ACC                             NORFOLK & DEDHAM MUTUAL FIRE INSURANCE COMPANIES             RUN DATE   04-18-25    PAGE    4
-                                        A C C E P T E D   C L A I M S   L I S T                    RUN TIME  8:25PM
+                                        A C C E P T E D   C L A I M S   L I S T                    RUN TIME  9:19PM
 
 CLAIM      POLICY       PROC  CO         INSUREDS       GP LN  COV -------TRANSACTION------------    LOSS           LOSS
 NUMBER     NUMBER       CNTR  CD           NAME         LN CD   CD TYPE      DESCRIPTION             DATE          AMOUNT
@@ -231,7 +231,7 @@ C2549952     921993079A        01 GOUDREAU, BARRY       06  06  01 51    FINAL P
 C2550000     924054187A        01 MULLINS, KAYLA        06  06  01 56    FINAL PAY EXP IND ADJ     01-24-25        90.00
 
   R2C12-ACC                             NORFOLK & DEDHAM MUTUAL FIRE INSURANCE COMPANIES             RUN DATE   04-18-25    PAGE    5
-                                        A C C E P T E D   C L A I M S   L I S T                    RUN TIME  8:25PM
+                                        A C C E P T E D   C L A I M S   L I S T                    RUN TIME  9:19PM
 
 CLAIM      POLICY       PROC  CO         INSUREDS       GP LN  COV -------TRANSACTION------------    LOSS           LOSS
 NUMBER     NUMBER       CNTR  CD           NAME         LN CD   CD TYPE      DESCRIPTION             DATE          AMOUNT
@@ -289,7 +289,7 @@ C2550814     923579362A        01 SISOIAN, ROBERT       06  06  01 21    CHANGE 
 C2550818     924139247A        01 OPARE, DANIEL         06  06  01 51    FINAL PAY LOSS            02-06-25        210.00
 
   R2C12-ACC                             NORFOLK & DEDHAM MUTUAL FIRE INSURANCE COMPANIES             RUN DATE   04-18-25    PAGE    6
-                                        A C C E P T E D   C L A I M S   L I S T                    RUN TIME  8:25PM
+                                        A C C E P T E D   C L A I M S   L I S T                    RUN TIME  9:19PM
 
 CLAIM      POLICY       PROC  CO         INSUREDS       GP LN  COV -------TRANSACTION------------    LOSS           LOSS
 NUMBER     NUMBER       CNTR  CD           NAME         LN CD   CD TYPE      DESCRIPTION             DATE          AMOUNT
@@ -347,7 +347,7 @@ C2551262     923830762A        01 EGIPCIACO, MELVIN     06  06  01 56    FINAL P
 C2551276     918168289A        01 PUSHEE, JOANNA        06  06  01 56    FINAL PAY EXP IND ADJ     02-17-25        100.00
 
   R2C12-ACC                             NORFOLK & DEDHAM MUTUAL FIRE INSURANCE COMPANIES             RUN DATE   04-18-25    PAGE    7
-                                        A C C E P T E D   C L A I M S   L I S T                    RUN TIME  8:25PM
+                                        A C C E P T E D   C L A I M S   L I S T                    RUN TIME  9:19PM
 
 CLAIM      POLICY       PROC  CO         INSUREDS       GP LN  COV -------TRANSACTION------------    LOSS           LOSS
 NUMBER     NUMBER       CNTR  CD           NAME         LN CD   CD TYPE      DESCRIPTION             DATE          AMOUNT
@@ -405,7 +405,7 @@ C2551630     924982970A        01 FAIRBANKS, JOANNE NO  06  06  01 01    OPEN LO
 C2551678     916648583A        01 GADDIPATI, SARAH      06  06  01 51    FINAL PAY LOSS            02-21-25        1141.69
 
   R2C12-ACC                             NORFOLK & DEDHAM MUTUAL FIRE INSURANCE COMPANIES             RUN DATE   04-18-25    PAGE    8
-                                        A C C E P T E D   C L A I M S   L I S T                    RUN TIME  8:25PM
+                                        A C C E P T E D   C L A I M S   L I S T                    RUN TIME  9:19PM
 
 CLAIM      POLICY       PROC  CO         INSUREDS       GP LN  COV -------TRANSACTION------------    LOSS           LOSS
 NUMBER     NUMBER       CNTR  CD           NAME         LN CD   CD TYPE      DESCRIPTION             DATE          AMOUNT
@@ -463,7 +463,7 @@ C2551872     922429936A        01 KANE, LINDA           06  06  01 01    OPEN LO
 C2551873     917988205A        01 PINCUS, DONNA         06  06  01 01    OPEN LOSS                 02-25-25        5000.00
 
   R2C12-ACC                             NORFOLK & DEDHAM MUTUAL FIRE INSURANCE COMPANIES             RUN DATE   04-18-25    PAGE    9
-                                        A C C E P T E D   C L A I M S   L I S T                    RUN TIME  8:25PM
+                                        A C C E P T E D   C L A I M S   L I S T                    RUN TIME  9:19PM
 
 CLAIM      POLICY       PROC  CO         INSUREDS       GP LN  COV -------TRANSACTION------------    LOSS           LOSS
 NUMBER     NUMBER       CNTR  CD           NAME         LN CD   CD TYPE      DESCRIPTION             DATE          AMOUNT
@@ -521,7 +521,7 @@ CI589499     WE160312A         01 BRENDON PROPERTIES I  42  42  01 41    PARTIAL
 CI589499     WE160312A         01 BRENDON PROPERTIES I  42  42  01 41    PARTIAL PAY LOSS          03-25-24        269.25
 
   R2C12-ACC                             NORFOLK & DEDHAM MUTUAL FIRE INSURANCE COMPANIES             RUN DATE   04-18-25    PAGE    10
-                                        A C C E P T E D   C L A I M S   L I S T                    RUN TIME  8:25PM
+                                        A C C E P T E D   C L A I M S   L I S T                    RUN TIME  9:19PM
 
 CLAIM      POLICY       PROC  CO         INSUREDS       GP LN  COV -------TRANSACTION------------    LOSS           LOSS
 NUMBER     NUMBER       CNTR  CD           NAME         LN CD   CD TYPE      DESCRIPTION             DATE          AMOUNT
@@ -579,7 +579,7 @@ CI753788     WE163231A         01 TLB II INC            42  42  01 41    PARTIAL
 CI753788     WE163231A         01 TLB II INC            42  42  01 41    PARTIAL PAY LOSS          01-20-25        1133.10
 
   R2C12-ACC                             NORFOLK & DEDHAM MUTUAL FIRE INSURANCE COMPANIES             RUN DATE   04-18-25    PAGE    11
-                                        A C C E P T E D   C L A I M S   L I S T                    RUN TIME  8:25PM
+                                        A C C E P T E D   C L A I M S   L I S T                    RUN TIME  9:19PM
 
 CLAIM      POLICY       PROC  CO         INSUREDS       GP LN  COV -------TRANSACTION------------    LOSS           LOSS
 NUMBER     NUMBER       CNTR  CD           NAME         LN CD   CD TYPE      DESCRIPTION             DATE          AMOUNT

@@ -1,5 +1,5 @@
   R2C12-SUM   DIRECT   CLAIMS   TOTAL                  NORFOLK & DEDHAM MUTUAL FIRE INSURANCE COMPANIESRUN DATE    04-18-25    PAGE    
-                                                         M T D    CLAIMS STAT UPDATE            RUN TIME  8:25PM
+                                                         M T D    CLAIMS STAT UPDATE            RUN TIME  9:19PM
 
                           PRIOR TOTAL       +        CURRENT UPDATE        =         TOTAL
 
@@ -28,7 +28,7 @@ AMOUNT  5 LOSS AMOUNT-ALL OTHERS                    COUNT  5 ALL OTHERS
 AMOUNT  6 TOTAL LOSS AMOUNT                          COUNT  6 LOSS AMOUNT
 AMOUNT  7 TOTAL 'ZZ' AMOUNT                         COUNT  7 TOTAL 'ZZ' COUNT
   R2C12-SUM   ASSUMED  CLAIMS   TOTAL                  NORFOLK & DEDHAM MUTUAL FIRE INSURANCE COMPANIESRUN DATE    04-18-25    PAGE    
-                                                         M T D    CLAIMS STAT UPDATE            RUN TIME  8:25PM
+                                                         M T D    CLAIMS STAT UPDATE            RUN TIME  9:19PM
 
                           PRIOR TOTAL       +        CURRENT UPDATE        =         TOTAL
 
@@ -57,7 +57,7 @@ AMOUNT  5 LOSS AMOUNT-ALL OTHERS                    COUNT  5 ALL OTHERS
 AMOUNT  6 TOTAL LOSS AMOUNT                          COUNT  6 LOSS AMOUNT
 AMOUNT  7 TOTAL 'ZZ' AMOUNT                         COUNT  7 TOTAL 'ZZ' COUNT
   R2C12-SUM   CEDED    CLAIMS   TOTAL                  NORFOLK & DEDHAM MUTUAL FIRE INSURANCE COMPANIESRUN DATE    04-18-25    PAGE    
-                                                         M T D    CLAIMS STAT UPDATE            RUN TIME  8:25PM
+                                                         M T D    CLAIMS STAT UPDATE            RUN TIME  9:19PM
 
                           PRIOR TOTAL       +        CURRENT UPDATE        =         TOTAL
 
@@ -86,7 +86,7 @@ AMOUNT  5 LOSS AMOUNT-ALL OTHERS                    COUNT  5 ALL OTHERS
 AMOUNT  6 TOTAL LOSS AMOUNT                          COUNT  6 LOSS AMOUNT
 AMOUNT  7 TOTAL 'ZZ' AMOUNT                         COUNT  7 TOTAL 'ZZ' COUNT
   R2C12-SUM   GRAND    CLAIMS   TOTAL                  NORFOLK & DEDHAM MUTUAL FIRE INSURANCE COMPANIESRUN DATE    04-18-25    PAGE    
-                                                         M T D    CLAIMS STAT UPDATE            RUN TIME  8:25PM
+                                                         M T D    CLAIMS STAT UPDATE            RUN TIME  9:19PM
 
                           PRIOR TOTAL       +        CURRENT UPDATE        =         TOTAL
 
