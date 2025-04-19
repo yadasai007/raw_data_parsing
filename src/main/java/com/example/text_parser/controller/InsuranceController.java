@@ -49,7 +49,8 @@ public class InsuranceController {
         this.dataTransferService=dataTransferService;
         this.entityExportService=entityExportService;
         try {
-			this.entityExportService.exportEntitiesToFile();
+			this.entityExportService.npmDataToFile();
+			this.entityExportService.amountToFile();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

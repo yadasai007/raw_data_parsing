@@ -1,0 +1,116 @@
+  R2C12-SUM   DIRECT   CLAIMS   TOTAL                  NORFOLK & DEDHAM MUTUAL FIRE INSURANCE COMPANIESRUN DATE    04-18-25    PAGE    
+                                                         M T D    CLAIMS STAT UPDATE            RUN TIME  8:25PM
+
+                          PRIOR TOTAL       +        CURRENT UPDATE        =         TOTAL
+
+AMOUNT 1                  17976518.00                    489735.00                18466253.00
+AMOUNT 2                   6244142.23                    329394.88                 6573537.11
+AMOUNT 3                   3392414.11                    860875.79                 4253289.90
+AMOUNT 4                   1166970.07                     27258.56                 1194228.63
+AMOUNT 5                   1836642.53                    138698.37                 1975340.90
+AMOUNT 6                  40616686.94                   1845962.60                42462649.54
+AMOUNT 7                         0.00                         0.00                       0.00
+COUNT 1                          2316                          110                       2426
+COUNT 2                           390                           41                        431
+COUNT 3                          4247                          276                       4523
+COUNT 4                          4016                           80                       4096
+COUNT 5                           647                           48                        695
+COUNT 6                             0                            0                          0
+COUNT 7                             0                            0                          0
+
+**  CLAIM AMOUNTS  **                               **  CLAIM COUNTS  **
+
+AMOUNT  1 LOSS AMOUNT-NEW LOSS                      COUNT  1 NEW LOSS
+AMOUNT  2 LOSS AMOUNT-RESERVE CHANGE                COUNT  2 RESERVE CHANGE
+AMOUNT  3 LOSS AMOUNT-PAYMENTS                      COUNT  3 PAYMENTS
+AMOUNT  4 LOSS AMOUNT-EXPENSES                      COUNT  4 EXPENSES
+AMOUNT  5 LOSS AMOUNT-ALL OTHERS                    COUNT  5 ALL OTHERS
+AMOUNT  6 TOTAL LOSS AMOUNT                          COUNT  6 LOSS AMOUNT
+AMOUNT  7 TOTAL 'ZZ' AMOUNT                         COUNT  7 TOTAL 'ZZ' COUNT
+  R2C12-SUM   ASSUMED  CLAIMS   TOTAL                  NORFOLK & DEDHAM MUTUAL FIRE INSURANCE COMPANIESRUN DATE    04-18-25    PAGE    
+                                                         M T D    CLAIMS STAT UPDATE            RUN TIME  8:25PM
+
+                          PRIOR TOTAL       +        CURRENT UPDATE        =         TOTAL
+
+AMOUNT 1                         0.00                         0.00                       0.00
+AMOUNT 2                         0.00                         0.00                       0.00
+AMOUNT 3                         0.00                         0.00                       0.00
+AMOUNT 4                         0.00                         0.00                       0.00
+AMOUNT 5                         0.00                         0.00                       0.00
+AMOUNT 6                         0.00                         0.00                       0.00
+AMOUNT 7                         0.00                         0.00                       0.00
+COUNT 1                             0                            0                          0
+COUNT 2                             0                            0                          0
+COUNT 3                             0                            0                          0
+COUNT 4                             0                            0                          0
+COUNT 5                             0                            0                          0
+COUNT 6                             0                            0                          0
+COUNT 7                             0                            0                          0
+
+**  CLAIM AMOUNTS  **                               **  CLAIM COUNTS  **
+
+AMOUNT  1 LOSS AMOUNT-NEW LOSS                      COUNT  1 NEW LOSS
+AMOUNT  2 LOSS AMOUNT-RESERVE CHANGE                COUNT  2 RESERVE CHANGE
+AMOUNT  3 LOSS AMOUNT-PAYMENTS                      COUNT  3 PAYMENTS
+AMOUNT  4 LOSS AMOUNT-EXPENSES                      COUNT  4 EXPENSES
+AMOUNT  5 LOSS AMOUNT-ALL OTHERS                    COUNT  5 ALL OTHERS
+AMOUNT  6 TOTAL LOSS AMOUNT                          COUNT  6 LOSS AMOUNT
+AMOUNT  7 TOTAL 'ZZ' AMOUNT                         COUNT  7 TOTAL 'ZZ' COUNT
+  R2C12-SUM   CEDED    CLAIMS   TOTAL                  NORFOLK & DEDHAM MUTUAL FIRE INSURANCE COMPANIESRUN DATE    04-18-25    PAGE    
+                                                         M T D    CLAIMS STAT UPDATE            RUN TIME  8:25PM
+
+                          PRIOR TOTAL       +        CURRENT UPDATE        =         TOTAL
+
+AMOUNT 1                    148500.00                         0.00                  148500.00
+AMOUNT 2                    136700.00                         0.00                  136700.00
+AMOUNT 3                         0.00                         0.00                       0.00
+AMOUNT 4                         0.00                         0.00                       0.00
+AMOUNT 5                    117400.79                     12615.23                  130016.02
+AMOUNT 6                    402600.79                     12615.23                  415216.02
+AMOUNT 7                         0.00                         0.00                       0.00
+COUNT 1                            20                            0                         20
+COUNT 2                             4                            0                          4
+COUNT 3                             8                            0                          8
+COUNT 4                             0                            0                          0
+COUNT 5                            24                            1                         25
+COUNT 6                             0                            0                          0
+COUNT 7                             0                            0                          0
+
+**  CLAIM AMOUNTS  **                               **  CLAIM COUNTS  **
+
+AMOUNT  1 LOSS AMOUNT-NEW LOSS                      COUNT  1 NEW LOSS
+AMOUNT  2 LOSS AMOUNT-RESERVE CHANGE                COUNT  2 RESERVE CHANGE
+AMOUNT  3 LOSS AMOUNT-PAYMENTS                      COUNT  3 PAYMENTS
+AMOUNT  4 LOSS AMOUNT-EXPENSES                      COUNT  4 EXPENSES
+AMOUNT  5 LOSS AMOUNT-ALL OTHERS                    COUNT  5 ALL OTHERS
+AMOUNT  6 TOTAL LOSS AMOUNT                          COUNT  6 LOSS AMOUNT
+AMOUNT  7 TOTAL 'ZZ' AMOUNT                         COUNT  7 TOTAL 'ZZ' COUNT
+  R2C12-SUM   GRAND    CLAIMS   TOTAL                  NORFOLK & DEDHAM MUTUAL FIRE INSURANCE COMPANIESRUN DATE    04-18-25    PAGE    
+                                                         M T D    CLAIMS STAT UPDATE            RUN TIME  8:25PM
+
+                          PRIOR TOTAL       +        CURRENT UPDATE        =         TOTAL
+
+AMOUNT 1                  17828018.00                    489735.00                18317753.00
+AMOUNT 2                   6107442.23                    329394.88                 6436837.11
+AMOUNT 3                   3392414.11                    860875.79                 4253289.90
+AMOUNT 4                   1166970.07                     27258.56                 1194228.63
+AMOUNT 5                   1719241.74                    126083.14                 1845324.88
+AMOUNT 6                  40214086.15                   1833347.37                42047433.52
+AMOUNT 7                         0.00                         0.00                       0.00
+COUNT 1                          2336                          110                       2446
+COUNT 2                           394                           41                        435
+COUNT 3                          4255                          276                       4531
+COUNT 4                          4016                           80                       4096
+COUNT 5                           671                           49                        720
+COUNT 6                             0                            0                          0
+COUNT 7                             0                            0                          0
+
+**  CLAIM AMOUNTS  **                               **  CLAIM COUNTS  **
+
+AMOUNT  1 LOSS AMOUNT-NEW LOSS                      COUNT  1 NEW LOSS
+AMOUNT  2 LOSS AMOUNT-RESERVE CHANGE                COUNT  2 RESERVE CHANGE
+AMOUNT  3 LOSS AMOUNT-PAYMENTS                      COUNT  3 PAYMENTS
+AMOUNT  4 LOSS AMOUNT-EXPENSES                      COUNT  4 EXPENSES
+AMOUNT  5 LOSS AMOUNT-ALL OTHERS                    COUNT  5 ALL OTHERS
+AMOUNT  6 TOTAL LOSS AMOUNT                          COUNT  6 LOSS AMOUNT
+AMOUNT  7 TOTAL 'ZZ' AMOUNT                         COUNT  7 TOTAL 'ZZ' COUNT
